@@ -50,13 +50,6 @@ class MahasiswaController extends Controller
   {
     $post = $request->all();
 
-    $request->validate([
-      'nama' => 'required',
-      'jenis_kelamin' => 'required',
-      'alamat' => 'required',
-      'sks' => 'required',
-      'mata_kuliah' => 'required'
-    ]);
     $mahasiswa = new Mahasiswa;
     $mahasiswa->nama = $post['nama'];
     $mahasiswa->jenis_kelamin = $post['jenis_kelamin'];
@@ -96,13 +89,6 @@ class MahasiswaController extends Controller
   {
     $post = $request->all();
 
-    $request->validate([
-      'nama' => 'required',
-      'jenis_kelamin' => 'required',
-      'alamat' => 'required',
-      'sks' => 'required',
-      'mata_kuliah' => 'required'
-    ]);
     $mahasiswa = DB::table('mahasiswas');
     $mahasiswa->where('id', $id);
     $mahasiswa->update([
